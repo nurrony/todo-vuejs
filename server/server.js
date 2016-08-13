@@ -8,5 +8,5 @@ app.get('/*',function (req, res) {
 })
 
 app.listen(3000, function () {
-  console.log('server is listening port 3000')
+  console.log('server is listening port http://localhost:3000')
 })
