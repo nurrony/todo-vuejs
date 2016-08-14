@@ -14,16 +14,11 @@ export default {
           },
           minlength: {
             rule: 4,
-            message: 'Task must be at least four character long'
+            message: 'Task must m'
           }
         },
       }],
       newTodo:''
-    }
-  },
-  computed: {
-    isRequired: function () {
-
     }
   },
   methods: {
@@ -39,7 +34,15 @@ export default {
         }
         ]
       this.newTodo = ''
-    }
+    },
+    removeTodo (id) {
+      this.todos = [
+        ...this.todos.slice(0, id),
+        ...this.todos.slice(id+1)
+      ]
+      console.log(this.todos)
+    },
+
   }
 }
 
