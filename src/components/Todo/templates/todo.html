@@ -20,7 +20,7 @@
   </validator>
   <ul class="list-group">
     <li class="list-group-item"
-        v-for="todo in todos"
+        v-for="todo in todos | orderBy 'id' -1"
         track-by="$index">
       {{ todo.text }}
        <span class="glyphicon glyphicon-trash pull-right" style="cursor: pointer" @click="removeTodo($index)"></span>
