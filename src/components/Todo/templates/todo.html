@@ -1,0 +1,18 @@
+<div class="todos">
+  <h1>Todo</h1>
+  <form @submit.prevent="addTodo">
+    <div class="form-group">
+      <input type="text" class="form-control" v-model="newTodo">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success">Add</button>
+    </div>
+  </form>
+  <ul class="list-group">
+    <li class="list-group-item"
+        v-for="todo in todos"
+        track-by="$index">
+      {{ todo.text + ' - ' + todo.completed}}
+    </li>
+  </ul>
+</div>
