@@ -1,13 +1,23 @@
-<div class="todos">
+<div class="todos" xmlns:v-validate="http://www.w3.org/1999/xhtml">
   <h1>Todo</h1>
-  <form @submit.prevent="addTodo">
-    <div class="form-group">
-      <input type="text" class="form-control" v-model="newTodo">
-    </div>
-    <div class="form-group">
-      <button class="btn btn-success">Add</button>
-    </div>
-  </form>
+  <validator name="validation1">
+    <form @submit.prevent="addTodo" novalidate>
+      <div class="form-group" v-for="field in fields">
+        <label :for="field.id">{{field.label}}</label>
+        <input
+          type="text"
+          class="form-control"
+          :id="field.id"
+          v-model="newTodo"
+          :placeholder="field.placeholder"
+          :field="field.name"
+          v-validate="field.validate"/>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" :disabled="$validation1.invalid">Add</button>
+      </div>
+    </form>
+  </validator>
   <ul class="list-group">
     <li class="list-group-item"
         v-for="todo in todos"
