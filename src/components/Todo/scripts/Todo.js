@@ -38,7 +38,7 @@ export default {
       )
     },
     removeTodo (id) {
-      this.todos = this.todos.filter((todo) => todo.id !== id && todo)
+      this.todos = this.todos.filter((todo) => todo.id !== id)
     },
 
   }

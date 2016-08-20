@@ -26,7 +26,8 @@
         {{ todo.text }}
         </span>
       <span class="glyphicon glyphicon-trash pull-right" style="cursor: pointer" @click="removeTodo(todo.id)"></span>
-      <span class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer" @click="toggleTodo(todo.id)"></span>
+      &nbsp;&nbsp;&nbsp;
+      <span class="glyphicon glyphicon-{{!todo.completed ? 'ok': 'remove'}} pull-right" style="cursor: pointer" @click="toggleTodo(todo.id)"></span>
     </li>
   </ul>
 </div>
