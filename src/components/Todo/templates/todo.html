@@ -25,8 +25,8 @@
       <span :class="{ 'straight': todo.completed }">
         {{ todo.text }}
         </span>
-      <span class="glyphicon glyphicon-trash pull-right" style="cursor: pointer" @click="removeTodo($index)"></span>
-      <span class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer" @click="toggleTodo($index)"></span>
+      <span class="glyphicon glyphicon-trash pull-right" style="cursor: pointer" @click="removeTodo(todo.id)"></span>
+      <span class="glyphicon glyphicon-pencil pull-right" style="cursor: pointer" @click="toggleTodo(todo.id)"></span>
     </li>
   </ul>
 </div>
