@@ -35,12 +35,20 @@ export default {
         ]
       this.newTodo = ''
     },
+    toggleTodo(id) {
+       // Todo: Resolve the bug
+       let todo = this.todos[id + 1]
+       this.todos = [
+         ...this.todos.slice(0, id),
+         {...todo, completed: !todo.completed},
+         ...this.todos.slice(id+1)
+       ]
+    },
     removeTodo (id) {
       this.todos = [
         ...this.todos.slice(0, id),
         ...this.todos.slice(id+1)
       ]
-      console.log(this.todos)
     },
 
   }
